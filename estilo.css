@@ -1,0 +1,136 @@
+
+body{
+    margin: 0;
+}
+/*-----------CONTAINER----------*/
+.container{
+    max-width: 1200px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'cabeçalho cabeçalho'
+    'texto-capa imagem-capa'
+    'imagem-org texto-org';
+    row-gap: 20px;
+    column-gap: 20px;
+    padding: 10px;
+    
+}
+
+/*---------------GRIDS--------*/
+.imagem-capa{
+    grid-area: imagem-capa;
+}
+.texto-capa{
+    grid-area: texto-capa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.imagem-org{
+    grid-area: imagem-org;
+}
+.texto-org{
+    grid-area: texto-org;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+section.imagem-capa > img, section.imagem-org > img{
+    max-width: 100%;
+}
+/*------------CABEÇALHO----------*/
+header{
+    grid-area: cabeçalho;
+    display: flex;
+    align-items: center;  
+    padding: 0 10px; 
+    
+}
+/*-----------MENU--------*/
+nav{
+    flex-grow: 1;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    
+}
+ul a:link{
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(63, 63, 63);
+    font-size: 1rem;
+}
+
+ul a:hover{
+    color: rgb(24, 8, 255);
+}
+.botao {
+    text-decoration: none;
+    color: #0B5CFF;
+    border: 2px solid #0B5CFF;
+    border-radius: 25px;
+    padding: 5px 30px;
+    align-self: flex-start;
+}
+
+.botao:hover {
+    background: #d2e1ff;
+}
+
+.botao.destaque {
+    background: #0B5CFF;
+    color: white;
+}
+
+.botao.destaque:hover {
+    background: #2d73ff;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1{
+    font-size: 2rem;
+}
+h2{
+    font-size: 1.8rem;
+}
+h3{
+    font-size: 0.8rem;
+}
+.texto-destaque{
+    color: blue;
+}
+footer{
+    margin: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+@media( max-width:950px ){
+    .container{
+        grid-template-columns: 1fr ;
+        grid-template-areas: 
+        'cabeçalho '
+        'texto-capa' 
+        'imagem-capa'
+        'imagem-org'
+        'texto-org';
+        row-gap: 20px;
+        column-gap: 20px;
+    }
+
+    header{
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    h1{
+        font-size: 1rem;
+    }
+}
